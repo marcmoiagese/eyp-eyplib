@@ -2,7 +2,7 @@
   "name": "eyp-eyplib",
   "version": "0.1.0",
   "author": "eyp",
-  "summary": null,
+  "summary": "Utility functions for puppet modules",
   "license": "Apache-2.0",
   "source": "https://github.com/AtlasIT-AM/eyp-eyplib",
   "project_page": null,

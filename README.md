@@ -1,5 +1,7 @@
 # eyplib
 
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+
 #### Table of Contents
 
 1. [Overview](#overview)
@@ -7,66 +9,54 @@
 3. [Setup](#setup)
     * [What eyplib affects](#what-eyplib-affects)
     * [Setup requirements](#setup-requirements)
-    * [Beginning with eyplib](#beginning-with-eyplib)
 4. [Usage](#usage)
 5. [Reference](#reference)
-5. [Limitations](#limitations)
 6. [Development](#development)
     * [Contributing](#contributing)
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+Standard library of resources for Puppet modules.
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
-
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+Contains common functions for eyp modules
 
 ## Setup
 
+Installing the eyplib module adds the functions, facts, and resources of this standard library to Puppet.
+
 ### What eyplib affects
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
+After you've installed eyplib, all of its functions, facts, and resources are already available.
 
 ### Setup Requirements
 
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
-
-### Beginning with eyplib
-
-The very basic steps needed for a user to get the module up and running.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+Requires pluginsync enabled
 
 ## Usage
 
-Put the classes, types, and resources for customizing, configuring, and doing
-the fancy stuff with your module here.
+Just add a dependency on your metadata.json file, for example:
+
+```json
+"dependencies": [
+  {"name":"puppetlabs/stdlib","version_requirement":">= 4.6.0"},
+  {"name":"puppetlabs/concat","version_requirement":">= 1.2.3"},
+  {"name":"eyp/eyplib","version_requirement":">= 0.0.1 < 0.1.0"}
+],
+```
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+### functions
 
-## Limitations
+#### bool2onoff
 
-This is where you list OS compatibility, version compatibility, etc.
+Transform a boolean (it can also be a string) to **On** or **Off**. Other values through.
+
+#### bool2yesno
+
+Transform a boolean (it can also be a string) to **yes** or **no**. Other values through.
 
 ## Development
 
