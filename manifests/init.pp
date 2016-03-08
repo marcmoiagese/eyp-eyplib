@@ -4,9 +4,6 @@
 #
 class eyplib inherits eyplib::params{
 
-  # service definition and notification:
-  #
-  # notify => Class['eyplib::service'],
-  # class { 'eyplib::service': }
+  # nothing to do here
 
 }
