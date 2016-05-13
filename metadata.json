@@ -4,9 +4,9 @@
   "author": "eyp",
   "summary": "Utility functions for puppet modules",
   "license": "Apache-2.0",
-  "source": "https://github.com/AtlasIT-AM/eyp-eyplib",
+  "source": "https://github.com/NTTCom-MS/eyp-eyplib",
   "project_page": null,
-  "issues_url": "https://github.com/AtlasIT-AM/eyp-eyplib/issues",
+  "issues_url": "https://github.com/NTTCom-MS/eyp-eyplib/issues",
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"}
   ],
