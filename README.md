@@ -58,6 +58,10 @@ Transform a boolean (it can also be a string) to **On** or **Off**. Other values
 
 Transform a boolean (it can also be a string) to **yes** or **no**. Other values through.
 
+#### bool2httpd
+
+Same as **bool2onoff**, transform a boolean (it can also be a string) to **On** or **Off**. Other values through.
+
 ## Development
 
 We are pushing to have acceptance testing in place, so any new feature should
