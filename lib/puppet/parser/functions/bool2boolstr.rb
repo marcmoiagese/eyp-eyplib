@@ -9,19 +9,19 @@
 #Licensed under the Apache License, Version 2.0 (the "License");
 #
 #
-Puppet::Parser::Functions::newfunction(:bool2yn, :type => :rvalue, :doc => <<-EOS
-Transform a supposed boolean to yes or no. Pass all other values through.
-Given a nil value (undef), bool2yn will return 'N'
+Puppet::Parser::Functions::newfunction(:bool2boolstr, :type => :rvalue, :doc => <<-EOS
+Transform a supposed boolean to "true" or "false". Pass all other values through.
+Given a nil value (undef), bool2boolstr will return "false"
 EOS
 ) do |args|
-  raise(Puppet::ParseError, "bool2yn() wrong number of arguments. #{args.size} vs 1)") if args.size != 1
+  raise(Puppet::ParseError, "bool2boolstr() wrong number of arguments. #{args.size} vs 1)") if args.size != 1
 
   arg = args[0]
 
   if arg.nil? or arg == false or arg =~ /false/i or arg =~ /no/i or arg == :undef
-    return 'N'
+    return 'false'
   elsif arg == true or arg =~ /true/i or arg =~ /yes/i
-    return 'Y'
+    return 'true'
   end
 
   return arg.to_s
