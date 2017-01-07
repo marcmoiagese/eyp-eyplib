@@ -46,7 +46,7 @@ Just add a dependency on your metadata.json file, for example:
 ],
 ```
 
-in ERB files you can call this function using:
+in ERB files you can call this module's functions using:
 
 ```erb
 <%= scope.function_bool2onoff([@trace]) %>
