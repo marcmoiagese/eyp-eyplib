@@ -2,7 +2,7 @@
 #
 # === eyplib documentation
 #
-class eyplib inherits eyplib::params{
+class eyplib{
 
   # nothing to do here
 
