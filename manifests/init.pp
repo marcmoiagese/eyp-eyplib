@@ -2,8 +2,6 @@
 #
 # === eyplib documentation
 #
-class eyplib{
-
+class eyplib {
   # nothing to do here
-
 }
