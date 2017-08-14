@@ -1,7 +1,5 @@
 # eyplib
 
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
-
 #### Table of Contents
 
 1. [Overview](#overview)
@@ -20,7 +18,7 @@ Standard library of resources for Puppet modules.
 
 ## Module Description
 
-Contains common functions for eyp modules
+Contains common functions for eyp modules and node classification facts
 
 ## Setup
 
@@ -36,7 +34,7 @@ Requires pluginsync enabled
 
 ## Usage
 
-Just add a dependency on your metadata.json file, for example:
+Just add a dependency on your **metadata.json** file, for example:
 
 ```json
 "dependencies": [
@@ -56,6 +54,14 @@ in ERB files you can call this module's functions using:
 
 ### functions
 
+#### bool2boolstr
+
+Transform a boolean to a string (**true** or **false**). Other values through.
+
+#### bool2number
+
+Transform a boolean (it can also be a string) to **0** or **1**. Other values through.
+
 #### bool2onoff
 
 Transform a boolean (it can also be a string) to **On** or **Off**. Other values through.
@@ -64,9 +70,10 @@ Transform a boolean (it can also be a string) to **On** or **Off**. Other values
 
 Transform a boolean (it can also be a string) to **yes** or **no**. Other values through.
 
-#### bool2httpd
+#### bool2yn
 
-Same as **bool2onoff**, transform a boolean (it can also be a string) to **On** or **Off**. Other values through.
+Transform a boolean (it can also be a string) to **y** or **n**. Other values through.
+
 
 ## Development
 
