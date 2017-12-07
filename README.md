@@ -50,7 +50,22 @@ in ERB files you can call this module's functions using:
 <%= scope.function_bool2onoff([@trace]) %>
 ```
 
+to download a file you can use the download type:
+
+```
+download { 'salt':
+  url => 'https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el7.noarch.rpm',
+  creates => '/tmp/test_repo_salt',
+}
+```
+
 ## Reference
+
+### types
+
+#### download
+
+download a file using wget checking that the resulting file is not empty
 
 ### functions
 
