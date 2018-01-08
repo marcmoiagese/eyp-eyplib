@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.11
+
+* added **git clone** type to clone repos
+
 ## 0.1.10
 
 * added **eypconf_servergroup** fact
