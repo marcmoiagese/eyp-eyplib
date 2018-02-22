@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.12
+
+* added **yesno2bool** function
+
 ## 0.1.11
 
 * added **git clone** type to clone repos
