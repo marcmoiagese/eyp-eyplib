@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.13
+
+* added **eypconf_projectid**
+
 ## 0.1.12
 
 * added **yesno2bool** function
