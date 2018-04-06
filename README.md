@@ -89,6 +89,10 @@ Transform a boolean (it can also be a string) to **yes** or **no**. Other values
 
 Transform a boolean (it can also be a string) to **y** or **n**. Other values through.
 
+#### retcode2bool
+
+Transform a return code to a bool (0: true, other values: false)
+
 
 ## Development
 
