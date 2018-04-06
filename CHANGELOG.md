@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.15
+
+* added **retcode2bool** function
+
 ## 0.1.14
 
 * added **eypconf_projectid**
