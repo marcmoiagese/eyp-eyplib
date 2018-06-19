@@ -2,7 +2,7 @@
 
 ## 0.1.16
 
-* added **pdb_test** plan  for puppet bolt
+* added **pdbtest** plan  for puppet bolt
 
 ## 0.1.15
 
