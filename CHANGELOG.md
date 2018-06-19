@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.16
+
+* added **pdb_test** plan  for puppet bolt
+
 ## 0.1.15
 
 * added **retcode2bool** function
