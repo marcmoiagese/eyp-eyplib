@@ -1,3 +1,3 @@
-plan pdb_test {
+plan pdbtest {
   return(puppetdb_query("nodes[certname] {}"))
 }
