@@ -9,6 +9,7 @@
     * [Setup requirements](#setup-requirements)
 4. [Usage](#usage)
 5. [Reference](#reference)
+    * [facts](#facts)
 6. [Development](#development)
     * [Contributing](#contributing)
 
@@ -60,6 +61,42 @@ download { 'salt':
 ```
 
 ## Reference
+
+### facts
+
+#### eypconf_userid
+
+/opt/eypconf/id/userid.sh /opt/eypconf/id/userid
+
+**eypconf_userid_uppercase** and **eypconf_userid_lowercase**
+
+#### eypconf_magic_hash
+
+/opt/eypconf/id/magic.sh /opt/eypconf/id/.magic
+
+#### eypconf_env
+
+/opt/eypconf/id/env.sh /opt/eypconf/id/env
+
+**eypconf_env_uppercase** and **eypconf_env_lowercase**
+
+#### eypconf_projectid
+
+/opt/eypconf/id/projectid.sh /opt/eypconf/id/projectid
+
+**eypconf_projectid_uppercase** and **eypconf_projectid_lowercase**
+
+#### eypconf_servergroup
+
+/opt/eypconf/id/servergroup.sh /opt/eypconf/id/servergroup
+
+**eypconf_servergroup_uppercase** and **eypconf_servergroup_lowercase**
+
+#### eypconf_type
+
+/opt/eypconf/id/type.sh /opt/eypconf/id/type
+
+**eypconf_type_uppercase** and **eypconf_type_lowercase**
 
 ### types
 
