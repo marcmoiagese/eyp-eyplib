@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.17
+
+* renamed unused facts
+
 ## 0.1.16
 
 * added **pdbtest** plan  for puppet bolt
