@@ -64,11 +64,11 @@ download { 'salt':
 
 ### facts
 
-#### eypconf_userid
+#### eypconf_platformid
 
-/opt/eypconf/id/userid.sh /opt/eypconf/id/userid
+/opt/eypconf/id/platformid.sh /opt/eypconf/id/platformid
 
-**eypconf_userid_uppercase** and **eypconf_userid_lowercase**
+**eypconf_platformid_uppercase** and **eypconf_platformid_lowercase**
 
 #### eypconf_magic_hash
 
@@ -80,11 +80,11 @@ download { 'salt':
 
 **eypconf_env_uppercase** and **eypconf_env_lowercase**
 
-#### eypconf_projectid
+#### eypconf_type
 
-/opt/eypconf/id/projectid.sh /opt/eypconf/id/projectid
+/opt/eypconf/id/type.sh /opt/eypconf/id/type
 
-**eypconf_projectid_uppercase** and **eypconf_projectid_lowercase**
+**eypconf_type_uppercase** and **eypconf_type_lowercase**
 
 #### eypconf_servergroup
 
@@ -92,11 +92,17 @@ download { 'salt':
 
 **eypconf_servergroup_uppercase** and **eypconf_servergroup_lowercase**
 
-#### eypconf_type
+#### eypconf_userid
 
-/opt/eypconf/id/type.sh /opt/eypconf/id/type
+/opt/eypconf/id/userid.sh /opt/eypconf/id/userid
 
-**eypconf_type_uppercase** and **eypconf_type_lowercase**
+**eypconf_userid_uppercase** and **eypconf_userid_lowercase**
+
+#### eypconf_customer
+
+/opt/eypconf/id/customer.sh /opt/eypconf/id/customer
+
+**eypconf_customer_uppercase** and **eypconf_customer_lowercase**
 
 ### types
 
