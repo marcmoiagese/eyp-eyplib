@@ -22,7 +22,7 @@ matrix:
     env: JOB=validate
     dist: trusty
     bundler_args:
-    script: bundle exec rake validate
+    script: bundle exec rake validate manifests/ lib/ spec/
   - rvm: default
     env: BEAKER_set="centos6-docker"
     dist: trusty
