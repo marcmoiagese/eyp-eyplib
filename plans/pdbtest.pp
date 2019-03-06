@@ -1,3 +1,3 @@
 plan eyplib::pdbtest {
-  return(puppetdb_query("nodes[certname] {}"))
+  return(puppetdb_query('nodes[certname] {}'))
 }
