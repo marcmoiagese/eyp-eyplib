@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.1.18
+
+* added fact **eypconf_description**
+* added **eyplib::autobanner** intended for generating a SSH banner file
+
 ## 0.1.17
 
 * renamed unused facts
