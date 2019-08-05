@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.20
+
+* changed banner for puppet managed server
+
 ## 0.1.19
 
 * bugfix **eyplib::autobanner**
