@@ -10,11 +10,27 @@ describe 'eyplib class' do
 
       class { 'eyplib': }
 
+      ->
+
+      class { 'eyplib::setdescription':
+        description => 'ACCEPTANCE TESTING',
+      }
+
+      ->
+
+      class { 'eyplib::autobanner': }
+
       EOF
 
-      # Run it twice and test for idempotency
+      # run several times - expect the 3rd run to be clean
+      expect(apply_manifest(pp).exit_code).to_not eq(1)
       expect(apply_manifest(pp).exit_code).to_not eq(1)
       expect(apply_manifest(pp).exit_code).to eq(0)
+    end
+
+    describe file('/opt/eypconf/autobanner') do
+      it { should be_file }
+      its(:content) { should match 'ACCEPTANCE TESTING' }
     end
 
   end
