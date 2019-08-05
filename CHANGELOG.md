@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.19
+
+* bugfix **eyplib::autobanner**
+
 ## 0.1.18
 
 * added fact **eypconf_description**

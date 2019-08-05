@@ -31,6 +31,7 @@ describe 'eyplib class' do
     describe file('/opt/eypconf/autobanner') do
       it { should be_file }
       its(:content) { should match 'ACCEPTANCE TESTING' }
+      its(:content) { should match 'puppet managed server' }
     end
   end
   context 'legal setup' do
