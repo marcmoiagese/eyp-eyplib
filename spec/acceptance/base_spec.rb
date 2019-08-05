@@ -32,6 +32,38 @@ describe 'eyplib class' do
       it { should be_file }
       its(:content) { should match 'ACCEPTANCE TESTING' }
     end
+  end
+  context 'legal setup' do
+    # Using puppet_apply as a helper
+    it 'should work with no errors' do
+      pp = <<-EOF
 
+      class { 'eyplib': }
+
+      ->
+
+      class { 'eyplib::setdescription':
+        description => 'ACCEPTANCE TESTING',
+      }
+
+      ->
+
+      class { 'eyplib::autobanner':
+        include_legal => true,
+      }
+
+      EOF
+
+      # run several times - expect the 3rd run to be clean
+      expect(apply_manifest(pp).exit_code).to_not eq(1)
+      expect(apply_manifest(pp).exit_code).to_not eq(1)
+      expect(apply_manifest(pp).exit_code).to eq(0)
+    end
+
+    describe file('/opt/eypconf/autobanner') do
+      it { should be_file }
+      its(:content) { should match 'ACCEPTANCE TESTING' }
+      its(:content) { should match 'This is a private system!!! All connection attempts are logged and' }
+    end
   end
 end
