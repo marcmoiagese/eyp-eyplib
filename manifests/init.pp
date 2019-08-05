@@ -3,5 +3,9 @@
 # === eyplib documentation
 #
 class eyplib {
-  # nothing to do here
+  exec { 'mkdir -p /opt/eypconf/id':
+    command => 'mkdir -p /opt/eypconf/id',
+    path    => '/usr/sbin:/usr/bin:/sbin:/bin',
+    creates => '/opt/eypconf/id',
+  }
 }
