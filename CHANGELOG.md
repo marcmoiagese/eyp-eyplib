@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.22
+
+* added **eypconf_location**
+
 ## 0.1.21
 
 * added double empty line at the end of the autobanner file
