@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.1.22
+
+* added **eypconf_location**
+* added **eypconf_sg** fact (servergroup shortname)
+
 ## 0.1.21
 
 * added double empty line at the end of the autobanner file
