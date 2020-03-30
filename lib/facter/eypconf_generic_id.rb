@@ -1,11 +1,11 @@
 Dir.entries("/etc/eypconf/id").select {|f| !File.directory? f}.each do |i|
 
+  genetic_id = Facter::Util::Resolution.exec("bash -c 'cat /etc/eypconf/id/#{i}'").to_s
+
   if i[0]=='.'
     fact_name=i[1..-1]
-    genetic_id = Facter::Util::Resolution.exec("bash -c 'cat /etc/eypconf/id/#{fact_name}'").to_s
   else
     fact_name=i
-    genetic_id = Facter::Util::Resolution.exec("bash -c 'cat /etc/eypconf/id/#{fact_name}'").to_s
   end
 
   unless genetic_id.nil? or genetic_id.empty?
