@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.23
+
+* simplified **eypconf** fact generation
+
 ## 0.1.22
 
 * added **eypconf_location**

@@ -1,6 +1,6 @@
-Dir.entries("/etc/eypconf/id").select {|f| !File.directory? f}.each do |i|
+Dir.entries("/opt/eypconf/id").select {|f| !File.directory? f}.each do |i|
 
-  genetic_id = Facter::Util::Resolution.exec("bash -c 'cat /etc/eypconf/id/#{i}'").to_s
+  genetic_id = Facter::Util::Resolution.exec("bash -c 'cat /opt/eypconf/id/#{i}'").to_s
 
   if i[0]=='.'
     fact_name=i[1..-1]
@@ -15,7 +15,7 @@ Dir.entries("/etc/eypconf/id").select {|f| !File.directory? f}.each do |i|
         end
     end
 
-    Facter.add("eypconf_#{fact_name}|_uppercase") do
+    Facter.add("eypconf_#{fact_name}_uppercase") do
         setcode do
           genetic_id.upcase
         end
