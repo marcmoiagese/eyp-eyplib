@@ -30,10 +30,9 @@ if File.exists?('/opt/eypconf/id') then
 
       Facter.add("eypconf_#{fact_name}_source") do
           setcode do
-            i
+            "/opt/eypconf/id/#{i}"
           end
       end
     end
-
   end
 end
