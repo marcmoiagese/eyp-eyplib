@@ -20,6 +20,12 @@ Dir.entries("/etc/eypconf/id").select {|f| !File.directory? f}.each do |i|
           genetic_id.downcase
         end
     end
+
+    Facter.add('eypconf_|i|_source') do
+        setcode do
+          i
+        end
+    end
   end
 
 end
