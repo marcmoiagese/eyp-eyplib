@@ -23,7 +23,7 @@ Puppet::Type.newtype(:download) do
 
     def sync
       output, status = provider.run_wget_command(value)
-      self.fail("Error executing wget; returned #{status}: '#{output}'") unless status == 0
+      self.fail("Error executing curl; returned #{status}: '#{output}'") unless status == 0
     end
   end
 

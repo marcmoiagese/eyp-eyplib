@@ -16,10 +16,10 @@ Puppet::Type.type(:download).provide(:download_linux) do
   end
 
   def run_wget_command(url)
-
-    command = ["wget"]
+    #curl https://yum.puppet.com/puppet5/puppet5-release-el-7.noarch.rpm --create-dirs -o /tmp/prova/cosa/rpm
+    command = ["curl"]
     command.push(url)
-    command.push("-O ", resource[:creates])
+    command.push("--create-dirs", "-o ", resource[:creates])
 
     if resource[:cwd]
       Dir.chdir resource[:cwd] do

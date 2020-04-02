@@ -4,7 +4,11 @@ if File.exists?('/opt/eypconf/id') then
     genetic_id = Facter::Util::Resolution.exec("bash -c 'cat /opt/eypconf/id/#{i}'").to_s
 
     if i[0]=='.' then
-      fact_name=i[1..-1]
+      if i == ".magic" then
+        fact_name="magic_hash"
+      else
+        fact_name=i[1..-1]
+      end
     else
       fact_name=i
     end
