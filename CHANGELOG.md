@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.24
+
+* modified **download** resource to use **curl** instead of **wget**
+
 ## 0.1.23
 
 * simplified **eypconf** fact generation
