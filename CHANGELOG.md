@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.25
+
+* improved autobanner template
+
 ## 0.1.24
 
 * modified **download** resource to use **curl** instead of **wget**
