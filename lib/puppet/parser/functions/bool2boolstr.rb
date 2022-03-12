@@ -2,11 +2,11 @@
 # with minor changes
 #
 #
-#Copyright (C) 2012 Puppet Labs Inc
+# Copyright (C) 2012 Puppet Labs Inc
 #
-#Puppet Labs can be contacted at: info@puppetlabs.com
+# Puppet Labs can be contacted at: info@puppetlabs.com
 #
-#Licensed under the Apache License, Version 2.0 (the "License");
+# Licensed under the Apache License, Version 2.0 (the "License");
 #
 #
 Puppet::Parser::Functions::newfunction(:bool2boolstr, :type => :rvalue, :doc => <<-EOS

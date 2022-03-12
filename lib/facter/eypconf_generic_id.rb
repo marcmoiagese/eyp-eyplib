@@ -1,23 +1,22 @@
-if File.exists?('/opt/eypconf/id') then
-  Dir.entries("/opt/eypconf/id").select {|f| !File.directory? f}.each do |i|
-
+if File.exist?('/opt/eypconf/id') then
+  Dir.entries("/opt/eypconf/id").select { |f| !File.directory? f }.each do |i|
     genetic_id = Facter::Util::Resolution.exec("bash -c 'cat /opt/eypconf/id/#{i}'").to_s
 
-    if i[0]=='.' then
-      if i == ".magic" then
-        fact_name="magic_hash"
+    if i[0] =='.'
+      if i == ".magic"
+        fact_name= "magic_hash"
       else
-        fact_name=i[1..-1]
+        fact_name= i[1..-1]
       end
     else
-      fact_name=i
+      fact_name= i
     end
 
-    unless genetic_id.nil? or genetic_id.empty?
+    unless genetic_id.nil? || genetic_id.empty?
       Facter.add("eypconf_#{fact_name}") do
-          setcode do
-            genetic_id
-          end
+        setcode do
+          genetic_id
+        end
       end
 
       Facter.add("eypconf_#{fact_name}_uppercase") do

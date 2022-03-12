@@ -1,0 +1,282 @@
+[root@Puppet7 eyplib]# pdk convert
+
+------------Files to be added-----------
+/etc/puppetlabs/code/environments/production/modules/eyplib/.devcontainer/Dockerfile
+/etc/puppetlabs/code/environments/production/modules/eyplib/.devcontainer/README.md
+/etc/puppetlabs/code/environments/production/modules/eyplib/.devcontainer/devcontainer.json
+/etc/puppetlabs/code/environments/production/modules/eyplib/.gitattributes
+/etc/puppetlabs/code/environments/production/modules/eyplib/.gitlab-ci.yml
+/etc/puppetlabs/code/environments/production/modules/eyplib/.pdkignore
+/etc/puppetlabs/code/environments/production/modules/eyplib/.puppet-lint.rc
+/etc/puppetlabs/code/environments/production/modules/eyplib/.rspec
+/etc/puppetlabs/code/environments/production/modules/eyplib/.rubocop.yml
+/etc/puppetlabs/code/environments/production/modules/eyplib/.vscode/extensions.json
+/etc/puppetlabs/code/environments/production/modules/eyplib/.yardopts
+/etc/puppetlabs/code/environments/production/modules/eyplib/appveyor.yml
+/etc/puppetlabs/code/environments/production/modules/eyplib/spec/default_facts.yml
+/etc/puppetlabs/code/environments/production/modules/eyplib/.sync.yml
+/etc/puppetlabs/code/environments/production/modules/eyplib/data/common.yaml
+/etc/puppetlabs/code/environments/production/modules/eyplib/hiera.yaml
+
+----------Files to be modified----------
+/etc/puppetlabs/code/environments/production/modules/eyplib/metadata.json
+/etc/puppetlabs/code/environments/production/modules/eyplib/.gitignore
+/etc/puppetlabs/code/environments/production/modules/eyplib/.travis.yml
+/etc/puppetlabs/code/environments/production/modules/eyplib/Gemfile
+/etc/puppetlabs/code/environments/production/modules/eyplib/Rakefile
+/etc/puppetlabs/code/environments/production/modules/eyplib/spec/spec_helper.rb
+
+----------------------------------------
+
+You can find a report of differences in convert_report.txt.
+
+pdk (INFO): Module conversion is a potentially destructive action. Ensure that you have committed your module to a version control system or have a backup, and review the changes above before continuing.
+Do you want to continue and make these changes to your module? Yes
+
+------------Convert completed-----------
+
+16 files added, 6 files modified.
+
+[root@Puppet7 eyplib]# pdk validate --parallel
+pdk (INFO): Using Ruby 2.7.3
+pdk (INFO): Using Puppet 7.14.0
+pdk (INFO): Running all available validators...
+pdk (INFO): Validator 'puppet-epp' skipped for '/etc/puppetlabs/code/environments/production/modules/eyplib'. No files matching '["**/*.epp"]' found to validate.
+pdk (INFO): Validator 'task-name' skipped for '/etc/puppetlabs/code/environments/production/modules/eyplib'. No files matching '["tasks/**/*"]' found to validate.
+pdk (INFO): Validator 'task-metadata-lint' skipped for '/etc/puppetlabs/code/environments/production/modules/eyplib'. No files matching '["tasks/*.json"]' found to validate.
+â”Œ [â”] Running yaml validators ...
+â””â”€â”€ [â”] Checking YAML syntax (**/*.yaml **/*.yml).
+â”Œ [|] Running metadata validators ...
+â”â”€â”€ [â”] Checking metadata syntax (metadata.json tasks/*.json).
+â”Œ [â”] Running tasks validators ...
+â”Œ [/] Running metadata validators ...s/**/*).
+â””â”€â”€ [â”] Checking task metadata style (tasks/*.json).
+                                   â”Œ [â–] Running metadata validators ...
+â”Œ [â”] Running puppet validators ...
+â”Œ [â–] Running ruby validators ...
+â””â”€â”€ [â”] Checking Puppet manifest style (**/*.pp).
+pdk (WARNING): metadata-json-lint: Dependency puppetlabs/stdlib has an open ended dependency version requirement >= 4.12.0 (metadata.json)  -- FIXED
+pdk (WARNING): rubocop: `File.exists?` is deprecated in favor of `File.exist?`. (lib/facter/eypconf_generic_id.rb:1:9) -- FIXED
+pdk (CONVENTION): rubocop: Do not use `then` for multi-line `if`. (lib/facter/eypconf_generic_id.rb:1:36)  --- https://relishapp.com/womply/ruby-style-guide/docs/syntax
+pdk (CONVENTION): rubocop: Use `reject` instead of inverting `select`. (lib/facter/eypconf_generic_id.rb:2:3) --- Should be select https://queirozf.com/entries/ruby-map-each-collect-inject-reject-select-quick-reference
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/facter/eypconf_generic_id.rb:2:15)  --- NA
+pdk (CONVENTION): rubocop: Space between { and | missing. (lib/facter/eypconf_generic_id.rb:2:41) --- FIXED
+pdk (CONVENTION): rubocop: Space missing inside }. (lib/facter/eypconf_generic_id.rb:2:64) --- FIXED
+pdk (CONVENTION): rubocop: Extra empty line detected at block body beginning. (lib/facter/eypconf_generic_id.rb:3:1) --- FIXED
+pdk (CONVENTION): rubocop: Surrounding space missing for operator `==`. (lib/facter/eypconf_generic_id.rb:6:12) --- FIXED
+pdk (CONVENTION): rubocop: Do not use `then` for multi-line `if`. (lib/facter/eypconf_generic_id.rb:6:18) --- FIXED
+pdk (CONVENTION): rubocop: Use the return of the conditional for variable assignment and comparison. (lib/facter/eypconf_generic_id.rb:7:7) --- NA
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/facter/eypconf_generic_id.rb:7:15)  --- NA
+pdk (CONVENTION): rubocop: Do not use `then` for multi-line `if`. (lib/facter/eypconf_generic_id.rb:7:24) --- FIXED
+pdk (CONVENTION): rubocop: Surrounding space missing for operator `=`. (lib/facter/eypconf_generic_id.rb:8:18) --- FIXED
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/facter/eypconf_generic_id.rb:8:19) --- NA
+pdk (CONVENTION): rubocop: Surrounding space missing for operator `=`. (lib/facter/eypconf_generic_id.rb:10:18) --- FIXED
+pdk (CONVENTION): rubocop: Surrounding space missing for operator `=`. (lib/facter/eypconf_generic_id.rb:13:16) --- FIXED
+pdk (CONVENTION): rubocop: Use `next` to skip iteration. (lib/facter/eypconf_generic_id.rb:16:5)  --- NA https://github.com/rubocop/rubocop/issues/1238
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/facter/eypconf_generic_id.rb:16:28) --- FIXED
+pdk (CONVENTION): rubocop: Use 2 (not 4) spaces for indentation. (lib/facter/eypconf_generic_id.rb:18:7) --- FIXED
+pdk (CONVENTION): rubocop: Use 2 (not 4) spaces for indentation. (lib/facter/eypconf_generic_id.rb:24:7) --- FIXED
+pdk (CONVENTION): rubocop: Use 2 (not 4) spaces for indentation. (lib/facter/eypconf_generic_id.rb:30:7) --- FIXED
+pdk (CONVENTION): rubocop: Use 2 (not 4) spaces for indentation. (lib/facter/eypconf_generic_id.rb:36:7) --- FIXED
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2boolstr.rb:5:1) --- FIXED
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2boolstr.rb:7:1) --- FIXED
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2boolstr.rb:9:1) --- FIXED
+pdk (CONVENTION): rubocop: Do not use `::` for method calls. (lib/puppet/parser/functions/bool2boolstr.rb:12:26)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/parser/functions/bool2boolstr.rb:12:55)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/parser/functions/bool2boolstr.rb:12:73)
+pdk (CONVENTION): rubocop: Use a guard clause (`return 'false' if arg.nil? or arg == false or arg =~ /false/i or arg =~ /no/i or arg == :undef`) instead of wrapping the code inside a conditional expression. (lib/puppet/parser/functions/bool2boolstr.rb:21:3)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2boolstr.rb:21:15)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2boolstr.rb:21:31)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2boolstr.rb:21:41)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2boolstr.rb:21:50)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2boolstr.rb:21:60)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2boolstr.rb:21:66)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2boolstr.rb:23:21)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2boolstr.rb:23:31)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2boolstr.rb:23:39)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2boolstr.rb:23:49)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2number.rb:5:1)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2number.rb:7:1)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2number.rb:9:1)
+pdk (CONVENTION): rubocop: Do not use `::` for method calls. (lib/puppet/parser/functions/bool2number.rb:12:26)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/parser/functions/bool2number.rb:12:54)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/parser/functions/bool2number.rb:12:72)
+pdk (CONVENTION): rubocop: Use a guard clause (`return '0' if arg.nil? or arg == false or arg =~ /false/i or arg =~ /off/i or arg == :undef`) instead of wrapping the code inside a conditional expression. (lib/puppet/parser/functions/bool2number.rb:20:3)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2number.rb:20:15)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2number.rb:20:31)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2number.rb:20:41)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2number.rb:20:50)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2number.rb:20:60)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2number.rb:20:67)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2number.rb:22:21)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2number.rb:22:31)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2number.rb:22:39)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2number.rb:22:49)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2onoff.rb:5:1)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2onoff.rb:7:1)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2onoff.rb:9:1)
+pdk (CONVENTION): rubocop: Do not use `::` for method calls. (lib/puppet/parser/functions/bool2onoff.rb:12:26)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/parser/functions/bool2onoff.rb:12:53)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/parser/functions/bool2onoff.rb:12:71)
+pdk (CONVENTION): rubocop: Use a guard clause (`return 'off' if arg.nil? or arg == false or arg =~ /false/i or arg =~ /off/i or arg == :undef`) instead of wrapping the code inside a conditional expression. (lib/puppet/parser/functions/bool2onoff.rb:20:3)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2onoff.rb:20:15)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2onoff.rb:20:31)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2onoff.rb:20:41)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2onoff.rb:20:50)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2onoff.rb:20:60)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2onoff.rb:20:67)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2onoff.rb:22:21)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2onoff.rb:22:31)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2onoff.rb:22:39)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2onoff.rb:22:49)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2yesno.rb:5:1)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2yesno.rb:7:1)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2yesno.rb:9:1)
+pdk (CONVENTION): rubocop: Do not use `::` for method calls. (lib/puppet/parser/functions/bool2yesno.rb:12:26)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/parser/functions/bool2yesno.rb:12:53)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/parser/functions/bool2yesno.rb:12:71)
+pdk (CONVENTION): rubocop: Use a guard clause (`return 'no' if arg.nil? or arg == false or arg =~ /false/i or arg =~ /no/i or arg == :undef`) instead of wrapping the code inside a conditional expression. (lib/puppet/parser/functions/bool2yesno.rb:21:3)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2yesno.rb:21:15)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2yesno.rb:21:31)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2yesno.rb:21:41)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2yesno.rb:21:50)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2yesno.rb:21:60)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2yesno.rb:21:66)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2yesno.rb:23:21)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2yesno.rb:23:31)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2yesno.rb:23:39)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2yesno.rb:23:49)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2yn.rb:5:1)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2yn.rb:7:1)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/bool2yn.rb:9:1)
+pdk (CONVENTION): rubocop: Do not use `::` for method calls. (lib/puppet/parser/functions/bool2yn.rb:12:26)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/parser/functions/bool2yn.rb:12:50)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/parser/functions/bool2yn.rb:12:68)
+pdk (CONVENTION): rubocop: Use a guard clause (`return 'N' if arg.nil? or arg == false or arg =~ /false/i or arg =~ /no/i or arg == :undef`) instead of wrapping the code inside a conditional expression. (lib/puppet/parser/functions/bool2yn.rb:21:3)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2yn.rb:21:15)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2yn.rb:21:31)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2yn.rb:21:41)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2yn.rb:21:50)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2yn.rb:21:60)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2yn.rb:21:66)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2yn.rb:23:21)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2yn.rb:23:31)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/bool2yn.rb:23:39)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/bool2yn.rb:23:49)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/retcode2bool.rb:5:1)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/retcode2bool.rb:7:1)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/retcode2bool.rb:9:1)
+pdk (CONVENTION): rubocop: Do not use `::` for method calls. (lib/puppet/parser/functions/retcode2bool.rb:12:26)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/parser/functions/retcode2bool.rb:12:55)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/parser/functions/retcode2bool.rb:12:73)
+pdk (CONVENTION): rubocop: Use a guard clause (`return true if arg == 0`) instead of wrapping the code inside a conditional expression. (lib/puppet/parser/functions/retcode2bool.rb:22:3)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/yesno2bool.rb:5:1)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/yesno2bool.rb:7:1)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/parser/functions/yesno2bool.rb:9:1)
+pdk (CONVENTION): rubocop: Do not use `::` for method calls. (lib/puppet/parser/functions/yesno2bool.rb:12:26)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/parser/functions/yesno2bool.rb:12:53)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/parser/functions/yesno2bool.rb:12:71)
+pdk (CONVENTION): rubocop: Use a guard clause (`return false if arg.nil? or arg == false or arg =~ /false/i or arg =~ /no/i or arg == :undef`) instead of wrapping the code inside a conditional expression. (lib/puppet/parser/functions/yesno2bool.rb:21:3)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/yesno2bool.rb:21:15)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/yesno2bool.rb:21:31)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/yesno2bool.rb:21:41)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/yesno2bool.rb:21:50)
+pdk (CONVENTION): rubocop: Use `%r` around regular expression. (lib/puppet/parser/functions/yesno2bool.rb:21:60)
+pdk (CONVENTION): rubocop: Use `||` instead of `or`. (lib/puppet/parser/functions/yesno2bool.rb:21:66)
+pdk (CONVENTION): rubocop: Extra empty line detected at block body beginning. (lib/puppet/provider/download/download_linux.rb:2:1)
+pdk (WARNING): rubocop: `File.exists?` is deprecated in favor of `File.exist?`. (lib/puppet/provider/download/download_linux.rb:4:13)
+pdk (CONVENTION): rubocop: Redundant `self` detected. (lib/puppet/provider/download/download_linux.rb:6:9)
+pdk (CONVENTION): rubocop: Redundant `return` detected. (lib/puppet/provider/download/download_linux.rb:7:9)
+pdk (CONVENTION): rubocop: Redundant `self` detected. (lib/puppet/provider/download/download_linux.rb:9:9)
+pdk (CONVENTION): rubocop: Redundant `return` detected. (lib/puppet/provider/download/download_linux.rb:10:9)
+pdk (CONVENTION): rubocop: Redundant `self` detected. (lib/puppet/provider/download/download_linux.rb:13:7)
+pdk (CONVENTION): rubocop: Redundant `return` detected. (lib/puppet/provider/download/download_linux.rb:14:7)
+pdk (CONVENTION): rubocop: Missing space after `#`. (lib/puppet/provider/download/download_linux.rb:19:5)
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/puppet/provider/download/download_linux.rb:20:16)
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/puppet/provider/download/download_linux.rb:22:18)
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/puppet/provider/download/download_linux.rb:22:35)
+pdk (CONVENTION): rubocop: Use 2 spaces for indentation in a hash, relative to the first position after the preceding left parenthesis. (lib/puppet/provider/download/download_linux.rb:38:7)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/provider/download/download_linux.rb:38:7)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/provider/download/download_linux.rb:39:7)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/provider/download/download_linux.rb:40:7)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/provider/download/download_linux.rb:41:7)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/provider/download/download_linux.rb:42:7)
+pdk (CONVENTION): rubocop: Indent the right brace the same as the first position after the preceding left parenthesis. (lib/puppet/provider/download/download_linux.rb:43:5)
+pdk (CONVENTION): rubocop: Extra empty line detected at block body end. (lib/puppet/provider/download/download_linux.rb:46:1)
+pdk (CONVENTION): rubocop: Extra empty line detected at block body beginning. (lib/puppet/provider/gitclone/gitclone_linux.rb:2:1)
+pdk (WARNING): rubocop: `File.exists?` is deprecated in favor of `File.exist?`. (lib/puppet/provider/gitclone/gitclone_linux.rb:4:13)
+pdk (CONVENTION): rubocop: Surrounding space missing for operator `+`. (lib/puppet/provider/gitclone/gitclone_linux.rb:4:25)
+pdk (CONVENTION): rubocop: Redundant `self` detected. (lib/puppet/provider/gitclone/gitclone_linux.rb:5:7)
+pdk (CONVENTION): rubocop: Redundant `return` detected. (lib/puppet/provider/gitclone/gitclone_linux.rb:6:7)
+pdk (CONVENTION): rubocop: Redundant `self` detected. (lib/puppet/provider/gitclone/gitclone_linux.rb:8:7)
+pdk (CONVENTION): rubocop: Redundant `return` detected. (lib/puppet/provider/gitclone/gitclone_linux.rb:9:7)
+pdk (CONVENTION): rubocop: Extra empty line detected at method body beginning. (lib/puppet/provider/gitclone/gitclone_linux.rb:14:1)
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/puppet/provider/gitclone/gitclone_linux.rb:15:16)
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/puppet/provider/gitclone/gitclone_linux.rb:16:18)
+pdk (CONVENTION): rubocop: Use 2 spaces for indentation in a hash, relative to the first position after the preceding left parenthesis. (lib/puppet/provider/gitclone/gitclone_linux.rb:34:7)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/provider/gitclone/gitclone_linux.rb:34:7)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/provider/gitclone/gitclone_linux.rb:35:7)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/provider/gitclone/gitclone_linux.rb:36:7)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/provider/gitclone/gitclone_linux.rb:37:7)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/provider/gitclone/gitclone_linux.rb:38:7)
+pdk (CONVENTION): rubocop: Indent the right brace the same as the first position after the preceding left parenthesis. (lib/puppet/provider/gitclone/gitclone_linux.rb:39:5)
+pdk (CONVENTION): rubocop: Extra empty line detected at block body end. (lib/puppet/provider/gitclone/gitclone_linux.rb:42:1)
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/puppet/type/download.rb:5:10)
+pdk (CONVENTION): rubocop: Use a guard clause (`return :notrun if @resource.should_run_wget`) instead of wrapping the code inside a conditional expression. (lib/puppet/type/download.rb:17:7)
+pdk (CONVENTION): rubocop: Redundant `return` detected. (lib/puppet/type/download.rb:18:9)
+pdk (CONVENTION): rubocop: Redundant `return` detected. (lib/puppet/type/download.rb:20:9)
+pdk (CONVENTION): rubocop: Redundant `self` detected. (lib/puppet/type/download.rb:20:16)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/type/download.rb:30:18)
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/puppet/type/download.rb:31:10)
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/puppet/type/download.rb:32:15)
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/puppet/type/download.rb:36:10)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/type/download.rb:43:26)
+pdk (CONVENTION): rubocop: Redundant `self` detected. (lib/puppet/type/download.rb:58:5)
+pdk (CONVENTION): rubocop: Redundant `self` detected. (lib/puppet/type/download.rb:58:37)
+pdk (CONVENTION): rubocop: Extra empty line detected at block body end. (lib/puppet/type/download.rb:60:1)
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/puppet/type/gitclone.rb:5:10)
+pdk (CONVENTION): rubocop: Use a guard clause (`return :notrun if @resource.should_run_gitclone`) instead of wrapping the code inside a conditional expression. (lib/puppet/type/gitclone.rb:17:7)
+pdk (CONVENTION): rubocop: Redundant `return` detected. (lib/puppet/type/gitclone.rb:18:9)
+pdk (CONVENTION): rubocop: Redundant `return` detected. (lib/puppet/type/gitclone.rb:20:9)
+pdk (CONVENTION): rubocop: Redundant `self` detected. (lib/puppet/type/gitclone.rb:20:16)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/type/gitclone.rb:30:18)
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/puppet/type/gitclone.rb:31:10)
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/puppet/type/gitclone.rb:32:15)
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (lib/puppet/type/gitclone.rb:36:10)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (lib/puppet/type/gitclone.rb:43:26)
+pdk (CONVENTION): rubocop: Redundant `self` detected. (lib/puppet/type/gitclone.rb:58:5)
+pdk (CONVENTION): rubocop: Redundant `self` detected. (lib/puppet/type/gitclone.rb:58:37)
+pdk (CONVENTION): rubocop: Extra empty line detected at block body end. (lib/puppet/type/gitclone.rb:60:1)
+pdk (CONVENTION): rubocop: Extra empty line detected at block body beginning. (spec/acceptance/base_spec.rb:5:1)
+pdk (CONVENTION): rubocop: Do not use should when describing your tests. (spec/acceptance/base_spec.rb:8:9)
+pdk (CONVENTION): rubocop: Prefer `not_to` over `to_not`. (spec/acceptance/base_spec.rb:26:44)
+pdk (CONVENTION): rubocop: Prefer `not_to` over `to_not`. (spec/acceptance/base_spec.rb:27:44)
+pdk (CONVENTION): rubocop: Prefer `is_expected.to` over `should`. (spec/acceptance/base_spec.rb:32:12)
+pdk (CONVENTION): rubocop: Don't repeat descriptions within an example group. (spec/acceptance/base_spec.rb:33:7)
+pdk (CONVENTION): rubocop: Prefer `is_expected.to` over `should`. (spec/acceptance/base_spec.rb:33:23)
+pdk (CONVENTION): rubocop: Don't repeat descriptions within an example group. (spec/acceptance/base_spec.rb:34:7)
+pdk (CONVENTION): rubocop: Prefer `is_expected.to` over `should`. (spec/acceptance/base_spec.rb:34:23)
+pdk (CONVENTION): rubocop: Do not use should when describing your tests. (spec/acceptance/base_spec.rb:39:9)
+pdk (CONVENTION): rubocop: Prefer `not_to` over `to_not`. (spec/acceptance/base_spec.rb:59:44)
+pdk (CONVENTION): rubocop: Prefer `not_to` over `to_not`. (spec/acceptance/base_spec.rb:60:44)
+pdk (CONVENTION): rubocop: Prefer `is_expected.to` over `should`. (spec/acceptance/base_spec.rb:65:12)
+pdk (CONVENTION): rubocop: Don't repeat descriptions within an example group. (spec/acceptance/base_spec.rb:66:7)
+pdk (CONVENTION): rubocop: Prefer `is_expected.to` over `should`. (spec/acceptance/base_spec.rb:66:23)
+pdk (CONVENTION): rubocop: Don't repeat descriptions within an example group. (spec/acceptance/base_spec.rb:67:7)
+pdk (CONVENTION): rubocop: Prefer `is_expected.to` over `should`. (spec/acceptance/base_spec.rb:67:23)
+pdk (WARNING): rubocop: Do not use prefix `_` for a variable that is used. (spec/acceptance/version.rb:2:1)
+pdk (CONVENTION): rubocop: Use the return of the conditional for variable assignment and comparison. (spec/acceptance/version.rb:6:1)
+pdk (CONVENTION): rubocop: Do not introduce global variables. (spec/acceptance/version.rb:8:3)
+pdk (CONVENTION): rubocop: Do not introduce global variables. (spec/acceptance/version.rb:11:3)
+pdk (CONVENTION): rubocop: Do not introduce global variables. (spec/acceptance/version.rb:14:3)
+pdk (CONVENTION): rubocop: Prefer single-quoted strings when you don't need string interpolation or special symbols. (spec/classes/init_spec.rb:12:17)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (spec/classes/init_spec.rb:26:11)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (spec/classes/init_spec.rb:27:11)
+pdk (CONVENTION): rubocop: Prefer `is_expected.to` over `should`. (spec/classes/init_spec.rb:32:18)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (spec/spec_helper_acceptance.rb:15:27)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (spec/spec_helper_acceptance.rb:15:51)
+pdk (CONVENTION): rubocop: Use the new Ruby 1.9 hash syntax. (spec/spec_helper_acceptance.rb:17:68)
+pdk (CONVENTION): rubocop: Space missing after comma. (spec/spec_helper_acceptance.rb:17:96)
+pdk (WARNING): puppet-lint: class not documented (manifests/autobanner.pp:1:1)
+pdk (WARNING): puppet-lint: class not documented (manifests/setdescription.pp:1:1)
+[root@Puppet7 eyplib]# 
